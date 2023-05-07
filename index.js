@@ -5,10 +5,10 @@ const app = express();
 const bodyParser = require("body-parser");
 const pool = mysql.createPool({
   connectionLimit: 10,
-  password: "Elevator12*",
-  user: "root",
-  database: "mikesapp",
-  host: "localhost",
+  password: "qIGFqZVzBF",
+  user: "sql7616627",
+  database: "sql7616627",
+  host: "sql7.freesqldatabase.com",
   port: "3306",
 });
 
