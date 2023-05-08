@@ -123,7 +123,7 @@ app.get("/classes", async function(req,res){
 app.get("/orak", async function(req,res){
   try{
     const osztaly_id =req.headers.osztaly_id;
-    pool.query("SELECT nap, ora, tantargy, nev from orarendek,napok,tantargyak,tanarok where orarendek.nap_id=napok.id and orarendek.tantargy_id=Tantargyak.id and orarendek.tanar_id=tanarok.id group by osztaly_id, nap_id, ora, tanar_id, tantargy_id HAVING osztaly_id = ? order by nap_id ASC, ora DESC",[osztaly_id],function(err,rows){
+    pool.query("SELECT nap, ora, tantargy, nev from orarendek,napok,tantargyak,tanarok where orarendek.nap_id=napok.id and orarendek.tantargy_id=tantargyak.id and orarendek.tanar_id=tanarok.id group by osztaly_id, nap_id, ora, tanar_id, tantargy_id HAVING osztaly_id = ? order by nap_id ASC, ora DESC",[osztaly_id],function(err,rows){
       if(err){
         res.json({
           'error' : err
